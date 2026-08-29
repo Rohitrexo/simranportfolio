@@ -1,0 +1,5 @@
+const tabs=document.querySelectorAll('.tab');const panels=document.querySelectorAll('.tab-panel');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panels.forEach(p=>p.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.tab).classList.add('active')}));
+const words=['national','human','civic','high-stakes','real-time','mass'];let wi=0;const word=document.getElementById('industryWord');if(word){setInterval(()=>{word.style.opacity=0;setTimeout(()=>{wi=(wi+1)%words.length;word.textContent=words[wi];word.style.opacity=1},180)},1900)}
+const glow=document.querySelector('.cursor-glow');window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+document.querySelectorAll('.brand-pill').forEach(p=>{const domain=p.dataset.domain;if(domain){p.style.setProperty('--logo',`url(https://www.google.com/s2/favicons?domain=${domain}&sz=64)`);p.style.setProperty('background-image',`url(https://www.google.com/s2/favicons?domain=${domain}&sz=64)`);}});
+document.getElementById('year').textContent=new Date().getFullYear();
